@@ -1,7 +1,10 @@
+
 html,
 body {
   overflow-x: hidden;
 }
+
+/* ================= NAVBAR ================= */
 
 .navbar {
   display: flex;
@@ -10,41 +13,16 @@ body {
   background-color: #111827;
   border-radius: 10px;
   width: 95%;
-  margin-left: 25px;
+  margin: 16px auto; /* بدل margin-left */
   max-width: 100%;
   box-sizing: border-box;
-}
-
-.navbar ul {
-  display: flex;
-  list-style: none;
-  width: 50%;
-  justify-content: space-between;
-}
-
-.navbar ul li {
-  margin-left: 1rem;
-}
-
-.navbar ul li a {
-  text-decoration: none;
-  color: #ffffff;
-  font-weight: bold;
-  font-size: 1.4rem;
-}
-
-.navbar ul li a:hover {
-  color: #000000;
-  /* opacity: 0.5; */
-  background-color: white;
-  border-radius: 10px;
-  padding: 0.5rem 1rem;
-  transition: all 0.3s ease;
-
+  padding: 12px 16px;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .logo {
-  width: 11%;
+  width: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -55,29 +33,60 @@ body {
   border-radius: 15px;
 }
 
+.navbar ul {
+  display: flex;
+  list-style: none;
+  width: auto;              /* بدل 50% */
+  flex: 1;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li {
+  margin-left: 0;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 10px 14px;
+  border-radius: 10px;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.navbar ul li a:hover {
+  color: #000;
+  background-color: #fff;
+}
+
 .login-container {
   display: flex;
   align-items: center;
-  width: 17%;
+  width: auto;
+  gap: 8px;
 }
 
 .login-container i {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: #ffffff;
-  margin-right: 0.5rem;
+  padding: 6px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
 }
 
 .login-container i:hover {
   background-color: #fff;
-  color: #000000;
-  border-radius: 20px;
-  border: 2px solid rgb(255, 255, 255);
+  color: #000;
 }
-
 
 .login-btn,
 .register-btn {
-  margin-left: 0.5rem;
   padding: 0.5rem 1rem;
   background-color: #ffffff;
   color: #000000;
@@ -93,8 +102,47 @@ body {
 .register-btn:hover {
   background-color: #000000;
   color: #ffffff;
-  border: 2px solid #ffffff;
 }
+
+/* ================= MOBILE NAVBAR ================= */
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .navbar ul li a {
+    width: 100%;
+  }
+
+  .login-container {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 420px) {
+  .navbar ul li a {
+    font-size: 1.05rem;
+  }
+
+  .login-container i {
+    font-size: 1.6rem;
+  }
+}
+
+/* ================= PAGE ================= */
+
 h1 {
   text-align: center;
   margin: 30px;
@@ -103,7 +151,6 @@ h1 {
   font-weight: bold;
 }
 
-
 .info-badge {
   display: flex;
   align-items: flex-start;
@@ -111,11 +158,9 @@ h1 {
   padding: 0 20px;
 }
 
-
 .filter-container {
   width: 15%;
   min-width: 200px;
-  /* padding: 10px; */
   flex-shrink: 0;
   align-self: flex-start;
   position: sticky;
@@ -124,8 +169,7 @@ h1 {
 
 .filter-by h3 {
   font-size: 2rem;
-  margin: 0 0 20px 0;
-  padding: 0;
+  margin-bottom: 20px;
   font-weight: bold;
 }
 
@@ -146,52 +190,31 @@ hr {
   font-size: 14px;
 }
 
-.filter-group select {
-  width: 100%;
-  padding: 8px;
-  border-radius: 5px;
-  border: 1px solid #ddd;
-  font-size: 14px;
-}
-
+.filter-group select,
 .filter-group input[type="range"] {
   width: 100%;
-  margin-top: 10px;
 }
 
 .filter-group input[type="checkbox"] {
   margin-right: 8px;
 }
 
-.filter-group div {
-  margin-bottom: 8px;
-}
-
-
 .imges-info {
   display: flex;
   flex-wrap: wrap;
   flex: 1;
-  margin-left: 0;
-  padding-left: 0;
-  align-content: flex-start;
-  justify-content: flex-start;
   gap: 15px;
 }
 
 .imges-info h2 {
   flex-basis: 100%;
-  margin: 0 0 20px 0;
-  padding: 0;
+  margin-bottom: 20px;
   font-size: 2rem;
 }
 
-
 .container-imge {
   position: relative;
-  width: calc(25% - 15px); 
-  margin: 0;
-  display: inline-block;
+  width: calc(25% - 15px);
 }
 
 .imge-card {
@@ -201,16 +224,16 @@ hr {
   overflow: hidden;
   border-radius: 15px;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: 0.3s ease;
   background-color: #fff;
 }
 
-.imge-card img {
+.imge-card img,
+.hover-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 15px;
-  transition: opacity 0.4s ease;
 }
 
 .hover-img {
@@ -218,11 +241,7 @@ hr {
   top: 0;
   left: 0;
   opacity: 0;
-  transition: opacity 0.4s ease;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 15px;
+  transition: 0.4s ease;
 }
 
 .imge-card:hover .hover-img {
@@ -235,7 +254,6 @@ hr {
 
 .imge-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
 }
 
 .price {
@@ -246,21 +264,54 @@ hr {
   color: white;
   padding: 8px 12px;
   border-radius: 8px;
-  font-size: 1rem;
   font-weight: bold;
-}
-
-.price p {
-  margin: 0 0 5px 0;
-  font-size: 0.9rem;
 }
 
 .price span {
   color: #ffd700;
-  font-size: 1.1rem;
 }
 
+/* ================= RESPONSIVE GRID ================= */
 
+@media (max-width: 1400px) {
+  .container-imge {
+    width: calc(33.333% - 15px);
+  }
+}
+
+@media (max-width: 1024px) {
+  .container-imge {
+    width: calc(50% - 15px);
+  }
+}
+
+@media (max-width: 768px) {
+  .info-badge {
+    flex-direction: column;
+  }
+
+  .filter-container {
+    width: 100%;
+    position: static;
+    margin-bottom: 20px;
+  }
+
+  .container-imge {
+    width: calc(50% - 12px);
+  }
+}
+
+@media (max-width: 480px) {
+  .container-imge {
+    width: 100%;
+  }
+
+  .imge-card {
+    height: 260px;
+  }
+}
+
+/* ================= FOOTER ================= */
 footer {
   background-color: #111827;
   color: #fff;
@@ -328,393 +379,51 @@ footer i {
   font-size: 18px;
 }
 
-/* Responsive */
+/* Footer Responsive */
 @media (max-width: 768px) {
   footer {
     padding: 40px 20px;
     text-align: center;
   }
-  
+
   footer div {
     max-width: 100%;
   }
 }
 
-
-/* Large Screens (1400px and below) */
-@media (max-width: 1400px) {
-  .container-imge {
-    width: calc(33.333% - 15px); /* 3 كروت في الصف */
-  }
-}
-
-/* Large Tablets & Small Laptops (1200px and below) */
-@media (max-width: 1200px) {
-  .navbar ul li a {
-    font-size: 1.3rem;
-  }
-
-  h1 {
-    font-size: 35px;
-  }
-
-  .info-badge {
-    padding: 0 15px;
-  }
-
-  .filter-container {
-    width: 18%;
-    min-width: 180px;
-  }
-
-  .imge-card {
-    height: 350px;
-  }
-
-  .imges-info h2 {
-    font-size: 2.2rem;
-  }
-}
-
-/* Tablets (1024px and below) */
-@media (max-width: 1024px) {
-  .navbar ul li a {
-    font-size: 1.2rem;
-  }
-
-  .navbar ul li {
-    margin-left: 1rem;
-  }
-
-  h1 {
-    font-size: 32px;
-  }
-
-  .filter-container {
-    width: 20%;
-    min-width: 170px;
-  }
-
-  .container-imge {
-    width: calc(50% - 15px); /* كرتين في الصف */
-  }
-
-  .imge-card {
-    height: 330px;
-  }
-
-  .imges-info h2 {
-    font-size: 2rem;
-  }
-
-  .price {
-    font-size: 0.9rem;
-    padding: 7px 10px;
-  }
-}
-
-/* Tablets (768px and below) */
+/* Mobile: تحت بعض */
 @media (max-width: 768px) {
-  /* Navbar */
   .navbar {
-    flex-wrap: wrap;
-    padding: 15px;
-    border-radius: 15px;
-    margin-left: 10px;
-    margin-right: 10px;
-    width: calc(100% - 20px);
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
   }
 
   .navbar ul {
-    width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100% !important;
+    flex: unset;
+    gap: 10px;
     margin-top: 10px;
   }
 
-  .navbar ul li {
-    margin: 5px 8px;
-  }
-
   .navbar ul li a {
-    font-size: 1rem;
-    padding: 0.3rem 0.8rem;
-  }
-
-  .logo {
-    width: auto;
-  }
-
-  .logo img {
-    width: 45px;
+    width: 100%;
   }
 
   .login-container {
-    width: auto;
-  }
-
-  .login-container i {
-    font-size: 1.8rem;
-  }
-
-  .login-btn {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.9rem;
-  }
-
-  /* Heading */
-  h1 {
-    font-size: 28px;
-    margin: 20px 10px;
-  }
-
-  /* Main Content */
-  .info-badge {
-    flex-direction: column;
-    padding: 0 10px;
-  }
-
-  .filter-container {
-    width: 100%;
-    min-width: 100%;
-    position: static;
-    margin-bottom: 20px;
-    padding: 15px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-  }
-
-  .filter-by h3 {
-    font-size: 18px;
-  }
-
-  .imges-info {
-    gap: 12px;
-  }
-
-  .imges-info h2 {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-  }
-
-  .container-imge {
-    width: calc(50% - 12px); /* كرتين في الصف */
-  }
-
-  .imge-card {
-    height: 300px;
-  }
-
-  .price {
-    padding: 6px 10px;
-    font-size: 0.85rem;
-  }
-
-  .price p {
-    font-size: 0.75rem;
-  }
-
-  .price span {
-    font-size: 0.95rem;
-  }
-
-  /* Footer */
-  footer {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 40px 30px;
-    margin-top: 40px;
-  }
-
-  footer div {
-    width: 100%;
-  }
-
-  footer h3 {
-    font-size: 24px;
-  }
-
-  footer p {
-    font-size: 15px;
-  }
-
-  footer ul li a {
-    font-size: 15px;
+    width: 100% !important;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 }
 
-/* Mobile Phones (480px and below) */
-@media (max-width: 480px) {
-  /* Navbar */
-  .navbar {
-    padding: 10px;
-    border-radius: 12px;
-  }
-
-  .navbar ul li {
-    margin: 4px 6px;
-  }
-
+@media (max-width: 420px) {
   .navbar ul li a {
-    font-size: 0.85rem;
-    padding: 0.25rem 0.6rem;
-  }
-
-  .logo img {
-    width: 40px;
+    font-size: 1.05rem;
   }
 
   .login-container i {
-    font-size: 1.5rem;
-  }
-
-  .login-btn {
-    padding: 0.3rem 0.6rem;
-    font-size: 0.8rem;
-  }
-
-  /* Heading */
-  h1 {
-    font-size: 24px;
-    margin: 15px 8px;
-  }
-
-  /* Main Content */
-  .info-badge {
-    padding: 0 8px;
-  }
-
-  .filter-container {
-    padding: 12px;
-  }
-
-  .filter-by h3 {
-    font-size: 16px;
-  }
-
-  .filter-group label {
-    font-size: 13px;
-  }
-
-  .imges-info {
-    gap: 10px;
-  }
-
-  .imges-info h2 {
-    font-size: 1.5rem;
-    margin-bottom: 12px;
-  }
-
-  .container-imge {
-    width: calc(50% - 10px); /* كرتين في الصف */
-  }
-
-  .imge-card {
-    height: 240px; /* حجم أطول للموبايل */
-    border-radius: 12px;
-  }
-
-  .imge-card img {
-    border-radius: 12px;
-  }
-
-  .hover-img {
-    border-radius: 12px;
-  }
-
-  .imge-card:hover {
-    transform: scale(1.03);
-  }
-
-  .price {
-    padding: 5px 8px;
-    font-size: 0.75rem;
-    bottom: 8px;
-    left: 8px;
-    border-radius: 6px;
-  }
-
-  .price p {
-    font-size: 0.7rem;
-    margin-bottom: 3px;
-  }
-
-  .price span {
-    font-size: 0.85rem;
-  }
-
-  /* Footer */
-  footer {
-    padding: 30px 20px;
-    margin-top: 30px;
-    border-radius: 15px;
-  }
-
-  footer h3 {
-    font-size: 20px;
-  }
-
-  footer p,
-  footer ul li a {
-    font-size: 14px;
-  }
-
-  footer i {
-    margin-right: 6px;
-  }
-}
-
-/* Extra Small Devices (360px and below) */
-@media (max-width: 360px) {
-  .navbar {
-    padding: 8px;
-  }
-
-  .navbar ul li a {
-    font-size: 0.75rem;
-    padding: 0.2rem 0.5rem;
-  }
-
-  .logo img {
-    width: 35px;
-  }
-
-  h1 {
-    font-size: 20px;
-    margin: 12px 5px;
-  }
-
-  .imges-info h2 {
-    font-size: 1.3rem;
-  }
-
-  .container-imge {
-    width: 100%; /* كارت واحد في الصف للشاشات الصغيرة جداً */
-  }
-
-  .imge-card {
-    height: 300px;
-  }
-
-  .price {
-    font-size: 0.7rem;
-    padding: 4px 7px;
-  }
-
-  .price p {
-    font-size: 0.65rem;
-  }
-
-  .price span {
-    font-size: 0.8rem;
-  }
-
-  footer h3 {
-    font-size: 18px;
-  }
-
-  footer p,
-  footer ul li a {
-    font-size: 13px;
+    font-size: 1.6rem;
   }
 }
