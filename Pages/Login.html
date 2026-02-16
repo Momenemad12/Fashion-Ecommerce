@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="../Style/Login.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <div class="login-container">
+    <i class="fa-solid fa-circle-user fa-3x"></i>
+    <h2>Login to Your Account</h2>
+    
+    <form action="../Pages/Home.html" method="GET" id="login-form">
+      <div class="input-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required placeholder="Enter your email">
+      </div>
+
+      <div class="input-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required placeholder="Enter your password">
+      </div>
+
+      <div class="input-group remember-me">
+        <input type="checkbox" id="remember-me" name="remember-me">
+        <label for="remember-me">Remember me</label>
+      </div>
+
+      <div class="button-container">
+        <button type="submit" class="submit-btn">Login</button>
+      </div>
+
+      <p class="register-link">
+        Don't have an account? <a href="../Pages/Register.html">Register here</a>
+      </p>
+    </form>
+  </div>
+
+</body>
+</html>
