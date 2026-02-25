@@ -217,6 +217,28 @@ h1 {
   width: 70%;
   margin: 40px auto;
 }
+
+
+
+/* ===== Slider full width on mobile ===== */
+@media (max-width: 576px) {
+  .image-gallery {
+    width: 96% !important;
+  }
+
+  #image-slider,
+  #image-slider.splide {
+    width: 100% !important;
+    margin: 20px auto !important;
+  }
+
+  #image-slider .splide__track,
+  #image-slider .splide__list,
+  #image-slider .splide__slide {
+    width: 100% !important;
+  }
+}
+
 /* ================= PROMO BAR (PRO) ================= */
 
 .promo-bar {
